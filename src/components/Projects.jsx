@@ -3,42 +3,49 @@ import './css/Projects.css'; // optional for extra styling
 
 const projects = [
   {
-    title: 'Student Management System',
-    desc: 'Manage student data with add, update, delete features using MERN stack.',
-    img: '/images/student-management.png',
-    link: '#',
-  },
-  {
-    title: 'ClipSavior Downloader',
-    desc: 'Download YouTube videos and Instagram reels with Node.js backend.',
-    img: '/images/clipsavior.png',
-    link: '#',
-  },
-  {
-    title: 'Notes App',
-    desc: 'Create, edit and delete notes with a beautiful UI and MongoDB backend.',
-    img: '/images/notes-app.png',
-    link: '#',
+    title: 'Flappy Birds Game',
+    desc: 'A fun game with score tracking built using HTML, CSS, and JavaScript.',
+    img: '/projects/flappy.png',
+    link: 'https://devnikhil00.github.io/flappy-bird-game/',
   },
   {
     title: 'Rock Paper Scissors',
-    desc: 'A fun game with score tracking built using HTML, CSS, JS.',
-    img: '/projects/rps.jpg',
-    link: '#',
+    desc: 'A classic hand game recreated using HTML, CSS, and JavaScript with live score tracking.',
+    img: '/projects/rpc.png',
+    link: 'https://devnikhil00.github.io/Rock-Paper-Scissors/',
   },
   {
-    title: 'Music Player',
-    desc: 'A stylish music player with playlist support and audio visualization.',
-    img: '/images/music-player.png',
-    link: '#',
+    title: 'Currency Converter',
+    desc: 'A tool to convert currencies with real-time exchange rates using a public API.',
+    img: '/projects/currency.png',
+    link: 'https://devnikhil00.github.io/Currency-Converter/',
   },
   {
-    title: 'Web3 Aggregator',
-    desc: 'Showcase dApps, wallets and NFTs using React and Web3.js.',
-    img: '/images/web3-aggregator.png',
+    title: 'Calculator App',
+    desc: 'A responsive calculator built using HTML, CSS, and JavaScript for quick arithmetic operations.',
+    img: '/projects/calc.png',
+    link: 'https://devnikhil00.github.io/Calculator-project/',
+  },
+   {
+    title: 'Notes App',
+    desc: 'A MERN-based application that allows users to create, edit, and delete personal notes with secure authentication and cloud storage.',
+    img: '/projects/notes1.png',
     link: '#',
   },
+  // {
+  //   title: 'E-Commerce Platform',
+  //   desc: 'A full-stack MERN e-commerce platform featuring product listings, shopping cart, authentication, and order management.',
+  //   img: '/projects/ecommerce.png',
+  //   link: '#',
+  // },
+  // {
+  //   title: 'Web3 Aggregator',
+  //   desc: 'Showcase dApps, wallets, and NFTs using React, Web3.js, and blockchain APIs with real-time data integration.',
+  //   img: '/images/web3-aggregator.png',
+  //   link: '#',
+  // },
 ];
+
 
 const Projects = () => {
   return (
