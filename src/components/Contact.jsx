@@ -60,7 +60,7 @@ const Contact = () => {
                 type="submit"
                 className="w-full bg-orange-500 text-black font-medium px-6 py-2 rounded-md 
                            border border-orange-400 hover:bg-orange-400 hover:scale-103 
-                           transition-transform duration-300 shadow-md hover:shadow-orange-500/40 hover:"
+                           transition-transform duration-300 shadow-md hover:shadow-orange-500/40"
               >
                 Send Message
               </button>
@@ -77,21 +77,23 @@ const Contact = () => {
               </p>
             </div>
 
+            {/* ✉️ Email */}
             <div className="flex items-center gap-3 text-gray-300">
-              <FaEnvelope className="text-orange-400 text-lg" />
+              <FaEnvelope className="text-[#EA4335] text-lg" /> {/* Gmail red */}
               <div>
                 <p className="text-lg font-medium">Email</p>
-                <a href="mailto:nikhilprajapatistaic@example.com" className="text-orange-400 hover:underline">
-                  nikhilprajapatistaic@example.com
+                <a href="mailto:nikhilprajapatistaic@gmail.com" className="text-[#EA4335] hover:underline">
+                  nikhilprajapatistaic@gmail.com
                 </a>
               </div>
             </div>
 
+            {/* 📞 Phone */}
             <div className="flex items-center gap-3 text-gray-300">
-              <FaPhone className="text-orange-400 text-lg" />
+              <FaPhone className="text-[#25D366] text-lg" /> {/* WhatsApp green */}
               <div>
                 <p className="text-lg font-medium">Phone</p>
-                <p className="text-orange-400">+91-8423286055</p>
+                <p className="text-[#25D366]">+91-8423286055</p>
               </div>
             </div>
 
@@ -99,12 +101,32 @@ const Contact = () => {
             <div className="text-gray-300">
               <p className="text-lg font-medium mb-2">Follow Me</p>
               <div className="flex items-center gap-5 text-xl mt-2">
-                <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noreferrer" 
-                   className="hover:text-orange-400 hover:scale-110 transition"><FaLinkedin /></a>
-                <a href="https://github.com/your-username" target="_blank" rel="noreferrer" 
-                   className="hover:text-orange-400 hover:scale-110 transition"><FaGithub /></a>
-                <a href="https://instagram.com/your-handle" target="_blank" rel="noreferrer" 
-                   className="hover:text-orange-400 hover:scale-110 transition"><FaInstagram /></a>
+                <a
+                  href="https://linkedin.com/in/nikhil-prajapati9889/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:scale-110 transition"
+                >
+                  <FaLinkedin className="text-[#0077B5] hover:opacity-80" /> {/* LinkedIn */}
+                </a>
+
+                <a
+                  href="https://github.com/devNikhil00"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:scale-110 transition"
+                >
+                  <FaGithub className="text-[#f1e4e4] hover:opacity-80" /> {/* GitHub */}
+                </a>
+
+                <a
+                  href="https://instagram.com/your-handle"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:scale-110 transition"
+                >
+                  <FaInstagram className="text-[#E4405F] hover:opacity-80" /> {/* Instagram */}
+                </a>
               </div>
             </div>
           </div>

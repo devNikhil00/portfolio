@@ -6,7 +6,6 @@ import {
   FaGithub,
   FaEnvelope,
   FaInstagram,
-  FaTwitter,
   FaHtml5,
   FaCss3Alt,
   FaJs,
@@ -17,6 +16,7 @@ import {
   FaNpm,
   FaBootstrap,
 } from 'react-icons/fa';
+import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -58,13 +58,13 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-4 text-orange-400">Follow Me</h3>
           <div className="flex gap-5 text-2xl mb-4">
-            <a href="https://linkedin.com/in/your-profile" style={{ color: '#0077b5' }} target="_blank" className="hover:scale-110 transition"><FaLinkedin /></a>
-            <a href="https://github.com/your-username" style={{ color: '#ffffff' }} target="_blank" className="hover:scale-110 transition"><FaGithub /></a>
-            <a href="https://twitter.com/your-handle" style={{ color: '#1DA1F2' }} target="_blank" className="hover:scale-110 transition"><FaTwitter /></a>
+            <a href="https://linkedin.com/in/nikhil-prajapati9889/" style={{ color: '#0077b5' }} target="_blank" className="hover:scale-110 transition"><FaLinkedin /></a>
+            <a href="https://github.com/devNikhil00" style={{ color: '#ffffff' }} target="_blank" className="hover:scale-110 transition"><FaGithub /></a>
+            <a href="https://twitter.com/asyncnikhil" style={{ color: '#ffffff' }} target="_blank" className="hover:scale-110 transition"><FaXTwitter/></a>
             <a href="https://instagram.com/your-handle" style={{ color: '#E1306C' }} target="_blank" className="hover:scale-110 transition"><FaInstagram /></a>
-            <a href="mailto:nikhil@example.com" style={{ color: '#D44638' }} className="hover:scale-110 transition"><FaEnvelope /></a>
+            <a href="mailto:nikhilprajapatistaic@gmail.com" style={{ color: '#D44638' }} className="hover:scale-110 transition"><FaEnvelope /></a>
           </div>
-          <p className="text-gray-400 text-sm">nikhilprajapatistaic@example.com</p>
+          {/* <p className="text-gray-400 text-sm">nikhilprajapatistaic@gmail.com</p> */}
         </div>
 
         {/* ❓ FAQ Section */}
