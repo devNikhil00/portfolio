@@ -88,6 +88,7 @@ const Footer = () => {
               <p className="mt-2 text-gray-400 leading-relaxed">
                 Absolutely! I'm always open to exciting collaborations. Reach out via the contact form or social media.
               </p>
+              <h1>This is the changed part</h1>
             </details>
 
             <details className="group   transition-all duration-200 hover:border-orange-400">
