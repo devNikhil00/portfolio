@@ -5,12 +5,14 @@ import Skills from "./components/Skills";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <div className="bg-gradient-to-br from-black via-[#0a0f1a] to-[#111111] min-h-screen text-white">
       {/* Navbar */}
       <Navbar />
+      <ScrollToTop />
 
       {/* Sections for single-page navigation */}
       <section id="home">

@@ -3,3 +3,129 @@
 body {
   background-color: black;
 }
+
+/* =================================================
+   GLOBAL GLASS DESIGN SYSTEM
+================================================= */
+section {
+  scroll-margin-top: 90px; /* height of navbar */
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* navbar height */
+}
+
+/* Base glass surface */
+.glass {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  overflow: hidden;
+}
+
+/* Rounded glass variants */
+.glass-rounded {
+  border-radius: 1.25rem;
+}
+
+.glass-pill {
+  border-radius: 9999px;
+}
+
+/* Animated glass glow */
+.glass-animated::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background: conic-gradient(
+    from 0deg,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.15)
+  );
+  animation: glass-rotate 6s linear infinite;
+  filter: blur(20px);
+  z-index: -1;
+}
+
+@keyframes glass-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Accent glass (orange / blue) */
+.glass-accent {
+  background: linear-gradient(
+    135deg,
+    rgba(249, 115, 22, 0.1),
+    rgba(59, 130, 246, 0.1)
+  );
+  border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+/* =================================================
+   CARD SYSTEM
+================================================= */
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card-glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+}
+
+/* =================================================
+   SCROLL UTILITIES
+================================================= */
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+/* Fading edges */
+.fade-edges {
+  position: relative;
+}
+
+.fade-edges::before,
+.fade-edges::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.fade-edges::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.fade-edges::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent);
+}
