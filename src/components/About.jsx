@@ -4,7 +4,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="px-6 py-20 bg-gradient-to-br from-black via-[#0a0f1c] to-[#0f0f0f] text-white"
+      className="px-4 sm:px-6 pt-10 pb-16 bg-gradient-to-br from-black via-[#0a0f1c] to-[#0f0f0f] text-white"
     >
       <div className="max-w-6xl mx-auto text-center space-y-16">
         {/* 🧑‍💻 About Me Section */}
@@ -12,7 +12,7 @@ const About = () => {
           <p className="text-sm text-orange-500 font-semibold mb-2 tracking-wider uppercase">
             About Me
           </p>
-          <h2 className="text-4xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
             Who <span className="text-orange-500">I Am</span>
           </h2>
           <p className="text-gray-400 max-w-3xl mx-auto leading-relaxed">

@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion"; // eslint-disable-line no-unused-vars
 import { Typewriter } from "react-simple-typewriter";
 import myPhoto from "../assets/nikhil.jpg";
 
