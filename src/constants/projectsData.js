@@ -1,0 +1,107 @@
+export const PROJECTS_DATA = [
+  {
+    id: "naxora",
+    title: "Naxora – Tech Career Platform",
+    shortDesc: "A full-stack tech career guidance platform with an admin dashboard, learning roadmaps, user progress tracking, and 46 REST API endpoints.",
+    longDesc: "Naxora is a production-ready, full-stack tech career guidance platform built with a dedicated admin panel and a robust backend API. The admin dashboard (React 19 + Redux Toolkit) provides complete management of learning roadmaps, courses, subjects, user accounts, and analytics. The backend (Node.js + Express + MongoDB) powers 46 REST API endpoints across authentication, roadmap hierarchy management, course CRUD, user progress tracking, and admin operations. It features a 4-layer security model, JWT authentication, rate limiting, Helmet headers, and Row Level Security. The platform supports hierarchical roadmaps (Roadmap → Year → Subject → Topic → Content), real-time analytics, and Cloudinary-based media uploads.",
+    img: "/projects/Naxora.png",
+    link: "https://nexora-frontend-live.vercel.app/",
+    github: "https://github.com/devNikhil00/Naxora-admin",
+    adminLink: "https://naxora-admin.vercel.app/register",
+    backendGithub: "https://github.com/devNikhil00/Nexora-backend",
+    status: "in-progress",
+    techStack: ["React 19", "Redux Toolkit", "Node.js", "Express.js", "MongoDB", "Mongoose", "Tailwind CSS", "JWT Auth", "Cloudinary", "Vercel"],
+    features: [
+      "Admin dashboard with analytics & user management",
+      "Hierarchical roadmap system (Roadmap → Year → Subject → Topic)",
+      "46 REST API endpoints across 5 route files",
+      "JWT authentication with rate limiting & Helmet security",
+      "Cloudinary media uploads with Multer",
+      "Comprehensive test suite & database management scripts",
+    ]
+  },
+  {
+    id: "smart-bookmark",
+    title: "Smart Bookmark",
+    shortDesc: "A production-grade bookmark manager with real-time sync, Google OAuth, and 4-layer security built on Next.js 14 and Supabase.",
+    longDesc: "A full-stack bookmark management application featuring real-time synchronization via Supabase WebSockets, Google OAuth 2.0 authentication, and a robust 4-layer security model (Edge Middleware → Server Components → Server Actions → Row Level Security). Users can perform full CRUD operations with instant updates across all tabs and devices. Built with TypeScript for 100% type safety, it includes dual view modes (card grid & table), comprehensive URL validation against XSS/SSRF attacks, and responsive mobile-first design.",
+    img: "/projects/smart-bookmarks.png",
+    link: "https://smart-bookmark-livid.vercel.app/dashboard",
+    github: "https://github.com/devNikhil00/smart-bookmark",
+    status: "completed",
+    techStack: ["Next.js 14", "React 18", "TypeScript", "Supabase", "Tailwind CSS", "Vercel"],
+    features: [
+      "Google OAuth 2.0 authentication",
+      "Real-time sync across tabs (<100ms)",
+      "4-layer security with Row Level Security",
+      "Dual view modes (card grid & table)",
+      "Comprehensive URL validation (XSS/SSRF protection)",
+      "Full CRUD with confirmation dialogs",
+    ]
+  },
+  {
+    id: "notes-app",
+    title: "Notes App",
+    shortDesc: "A MERN-based application that allows users to create, edit, and delete personal notes with secure authentication and cloud storage.",
+    longDesc: "A full-stack, secure cloud note-taking application. Users can sign up, log in securely using JWT tokens, and perform full CRUD (Create, Read, Update, Delete) operations on their personal notes. The backend is built on Node/Express with MongoDB handling data persistence, ensuring users' data is secure and isolated.",
+    img: "/projects/notes1.png",
+    link: null,
+    github: "https://github.com/devNikhil00/notes-app",
+    status: "completed",
+    techStack: ["MongoDB", "Express.js", "React.js", "Node.js", "Tailwind CSS", "JWT Auth"],
+    features: [
+      "Secure user authentication (JWT + bcrypt)",
+      "Full RESTful API for notes management",
+      "State management for instant UI updates",
+      "Protected routes requiring login",
+    ]
+  },
+  {
+    id: "rock-paper-scissors",
+    title: "Rock Paper Scissors",
+    shortDesc: "A classic hand game recreated using HTML, CSS, and JavaScript with live score tracking.",
+    longDesc: "An interactive, browser-based Rock Paper Scissors game played against a computer opponent. The AI opponent uses randomized logic to make decisions. The game keeps a running tally of wins, losses, and ties, and features smooth CSS animations for the hand gestures and score updates.",
+    img: "/projects/rpc.png",
+    link: "https://devnikhil00.github.io/Rock-Paper-Scissors/",
+    github: "https://github.com/devNikhil00/Rock-Paper-Scissors",
+    status: "completed",
+    techStack: ["HTML5", "CSS3", "JavaScript (ES6+)", "DOM Manipulation"],
+    features: [
+      "Interactive UI with hover effects",
+      "Randomized computer opponent logic",
+      "Persistent live score tracking during session",
+    ]
+  },
+  {
+    id: "currency-converter",
+    title: "Currency Converter",
+    shortDesc: "A tool to convert currencies with real-time exchange rates using a public API.",
+    longDesc: "A sleek and responsive currency converter application that fetches live exchange rates from a public API. It allows users to instantly convert between dozens of global currencies with high accuracy. The UI is designed to be mobile-friendly and highly intuitive.",
+    img: "/projects/currency.png",
+    link: "https://devnikhil00.github.io/Currency-Converter/",
+    github: "https://github.com/devNikhil00/Currency-Converter",
+    status: "completed",
+    techStack: ["JavaScript", "REST APIs", "CSS Variables", "HTML5"],
+    features: [
+      "Live data fetching via REST API",
+      "Instant dual-way conversion",
+      "Support for 50+ fiat currencies",
+    ]
+  },
+  {
+    id: "calculator-app",
+    title: "Calculator App",
+    shortDesc: "A responsive calculator built using HTML, CSS, and JavaScript for quick arithmetic operations.",
+    longDesc: "A fully functional digital calculator that handles all standard arithmetic operations (addition, subtraction, multiplication, division). It handles edge cases like floating point math, consecutive operations, and division by zero gracefully. Designed with a clean, neumorphic aesthetic.",
+    img: "/projects/calc.png",
+    link: "https://devnikhil00.github.io/Calculator-project/",
+    github: "https://github.com/devNikhil00/Calculator-project",
+    status: "completed",
+    techStack: ["JavaScript", "CSS Grid", "HTML5"],
+    features: [
+      "Handles floating point precision",
+      "Keyboard support for math inputs",
+      "Responsive grid-based layout",
+    ]
+  },
+];

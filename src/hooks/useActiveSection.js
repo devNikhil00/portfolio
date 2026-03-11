@@ -15,7 +15,7 @@ const useActiveSection = () => {
         });
       },
       {
-        rootMargin: "-40% 0px -40% 0px",
+        rootMargin: "-45% 0px -45% 0px",
         threshold: 0,
       }
     );

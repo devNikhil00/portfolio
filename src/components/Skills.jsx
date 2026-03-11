@@ -76,13 +76,13 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="px-4 py-20 bg-gradient-to-br from-black via-[#0a0f1c] to-[#0f0f0f] text-white"
+      className="px-4 sm:px-6 pt-10 pb-16 bg-gradient-to-br from-black via-[#0a0f1c] to-[#0f0f0f] text-white"
     >
       <div className="max-w-6xl mx-auto text-center">
         <p className="text-sm text-orange-500 font-semibold mb-2">
           Tech Stack
         </p>
-        <h2 className="text-4xl font-bold mb-6">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-6">
           My <span className="text-orange-500">Skills</span>
         </h2>
         <p className="text-gray-400 mb-12 max-w-2xl mx-auto">
@@ -91,7 +91,7 @@ const Skills = () => {
         </p>
 
         {/* Categories */}
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 px-4">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {Object.entries(SKILL_CATEGORIES).map(([category, skills]) => (
             <section
               key={category}
