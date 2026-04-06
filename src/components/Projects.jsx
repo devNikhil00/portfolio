@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion"; // eslint-disable-line no-unused-vars
 import { PROJECTS_DATA } from "../constants/projectsData";
@@ -16,8 +16,16 @@ const cardVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
+const DEFAULT_VISIBLE_PROJECTS = 6;
+
 const Projects = () => {
+  const [showAll, setShowAll] = useState(false);
   const completed = PROJECTS_DATA.filter((p) => p.status === "completed").length;
+  const hasOverflow = PROJECTS_DATA.length > DEFAULT_VISIBLE_PROJECTS;
+  const visibleProjects = useMemo(() => {
+    if (showAll) return PROJECTS_DATA;
+    return PROJECTS_DATA.slice(0, DEFAULT_VISIBLE_PROJECTS);
+  }, [showAll]);
 
   return (
     <section id="projects" className="px-4 sm:px-6 pt-10 pb-16 text-white">
@@ -49,27 +57,44 @@ const Projects = () => {
         </div>
       </div>
 
-      {/* ── Project Grid ── */}
-      <motion.div
-        className="max-w-6xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.15 }}
-      >
-        {PROJECTS_DATA.map((project, idx) => (
-          <motion.article
-            key={project.id}
-            variants={cardVariants}
-            className="group rounded-xl border border-[#1e90ff30] hover:border-[#1e90ff] bg-[#0d1117]/60 backdrop-blur-sm transition-all duration-500 hover:shadow-[0_0_20px_#1e90ff40] flex flex-col overflow-hidden"
+      {hasOverflow && (
+        <div className="max-w-6xl mx-auto mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <p className="text-xs text-gray-500">
+            Showing {visibleProjects.length} of {PROJECTS_DATA.length} projects
+            {showAll ? " (scroll to explore all)" : ""}
+          </p>
+          <button
+            type="button"
+            onClick={() => setShowAll((prev) => !prev)}
+            className="self-start sm:self-auto text-xs font-semibold px-3 py-1.5 rounded-md border border-[#1e90ff40] text-blue-300 hover:text-white hover:border-[#1e90ff] hover:bg-[#1e90ff1a] transition-colors"
           >
+            {showAll ? "Show Less" : "View All Projects"}
+          </button>
+        </div>
+      )}
+
+      {/* ── Project Grid ── */}
+      <div className={`max-w-6xl mx-auto ${showAll ? "projects-scroll-panel pr-2 sm:pr-3" : ""}`}>
+        <motion.div
+          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+        >
+          {visibleProjects.map((project, idx) => (
+            <motion.article
+              key={project.id}
+              variants={cardVariants}
+              className="project-card group rounded-xl border border-[#1e90ff30] hover:border-[#1e90ff] bg-[#0d1117]/70 backdrop-blur-sm transition-all duration-500 hover:shadow-[0_0_20px_#1e90ff40] flex flex-col overflow-hidden h-full"
+            >
             {/* image */}
-            <div className="relative overflow-hidden">
+            <div className="project-card-media relative overflow-hidden border-b border-white/5">
               <img
                 src={project.img}
                 alt={project.title}
                 loading="lazy"
-                className="w-full aspect-video object-contain bg-[#0a0e17] transition-transform duration-500 group-hover:scale-105"
+                className="w-full aspect-video object-cover bg-[#0a0e17] transition-transform duration-500 group-hover:scale-105"
                 onError={(e) => {
                   e.target.onerror = null;
                   e.target.style.display = "none";
@@ -106,41 +131,15 @@ const Projects = () => {
                 )}
                 {project.status === "completed" ? "Completed" : "In Progress"}
               </span>
-
-              {/* quick actions (visible on hover) */}
-              <div className="absolute bottom-3 right-3 flex gap-2 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                {project.github && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    title="View Source Code"
-                    className="w-8 h-8 flex items-center justify-center rounded-lg bg-black/70 border border-[#1e90ff50] text-gray-300 hover:text-white hover:border-[#1e90ff] transition-colors"
-                  >
-                    <FaGithub className="text-sm" />
-                  </a>
-                )}
-                {project.link && (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    title="Live Demo"
-                    className="w-8 h-8 flex items-center justify-center rounded-lg bg-black/70 border border-[#1e90ff50] text-gray-300 hover:text-white hover:border-[#1e90ff] transition-colors"
-                  >
-                    <FaExternalLinkAlt className="text-xs" />
-                  </a>
-                )}
-              </div>
             </div>
 
             {/* content */}
-            <div className="p-5 flex flex-col flex-grow">
+            <div className="p-5 flex flex-col flex-grow gap-2">
               <h3 className="text-lg font-semibold mb-1.5 group-hover:text-orange-400 transition-colors duration-300">
                 {project.title}
               </h3>
 
-              <p className="text-gray-400 text-sm leading-relaxed mb-4 flex-grow line-clamp-2">
+              <p className="text-gray-400 text-sm leading-relaxed mb-2 flex-grow line-clamp-2 min-h-[44px]">
                 {project.shortDesc}
               </p>
 
@@ -161,6 +160,31 @@ const Projects = () => {
                 )}
               </div>
 
+              <div className="flex items-center gap-2 mb-1">
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-[#1e90ff30] text-xs text-blue-300 hover:text-white hover:border-[#1e90ff] transition-colors"
+                  >
+                    <FaGithub className="text-[11px]" />
+                    Code
+                  </a>
+                )}
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-[#1e90ff30] text-xs text-blue-300 hover:text-white hover:border-[#1e90ff] transition-colors"
+                  >
+                    <FaExternalLinkAlt className="text-[10px]" />
+                    Demo
+                  </a>
+                )}
+              </div>
+
               {/* view details */}
               <Link
                 to={`/project/${project.id}`}
@@ -172,9 +196,10 @@ const Projects = () => {
                 </span>
               </Link>
             </div>
-          </motion.article>
-        ))}
-      </motion.div>
+            </motion.article>
+          ))}
+        </motion.div>
+      </div>
     </section>
   );
 };

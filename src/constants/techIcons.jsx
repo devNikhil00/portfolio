@@ -5,6 +5,7 @@ import {
   FaReact,
   FaNodeJs,
   FaCode,
+  FaPython,
 } from "react-icons/fa";
 import {
   SiTailwindcss,
@@ -19,6 +20,8 @@ import {
   SiMongoose,
   SiCloudinary,
   SiAxios,
+  SiStreamlit,
+  SiPandas,
 } from "react-icons/si";
 
 export const TECH_ICONS = {
@@ -47,4 +50,10 @@ export const TECH_ICONS = {
   "Mongoose":           <SiMongoose className="text-orange-300" />,
   "Cloudinary":         <SiCloudinary className="text-blue-400" />,
   "Axios":              <SiAxios className="text-purple-400" />,
+  "Python":             <FaPython className="text-yellow-400" />,
+  "Streamlit":          <SiStreamlit className="text-red-400" />,
+  "Pandas":             <SiPandas className="text-cyan-400" />,
+  "Rule-based AI":      <FaCode className="text-emerald-400" />,
+  "Data Validation":    <FaCode className="text-orange-400" />,
+  "CSV Processing":     <FaCode className="text-blue-300" />,
 };

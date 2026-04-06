@@ -24,6 +24,7 @@ const Contact = () => {
 
   const [status, setStatus] = useState('idle'); // 'idle' | 'loading' | 'success' | 'error'
   const [errorMsg, setErrorMsg] = useState('');
+  const [sentName, setSentName] = useState('');
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -42,6 +43,7 @@ const Contact = () => {
         EMAILJS_PUBLIC_KEY
       );
       setStatus('success');
+      setSentName(formData.from_name);
       setFormData({ from_name: '', from_email: '', phone: '', message: '' });
     } catch (err) {
       console.error('EmailJS error:', err);
@@ -80,7 +82,7 @@ const Contact = () => {
                   </div>
                   <h3 className="text-2xl font-bold text-white tracking-wide">Message Sent!</h3>
                   <p className="text-gray-400 max-w-[250px]">
-                    Thank you for reaching out, {formData.from_name || 'there'}. I'll get back to you as soon as possible!
+                    Thank you for reaching out, {sentName || 'there'}. I'll get back to you as soon as possible!
                   </p>
                   <button
                     onClick={() => setStatus('idle')}
@@ -125,6 +127,8 @@ const Contact = () => {
                         value={formData.from_email}
                         onChange={handleChange}
                         required
+                        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                        title="Please enter a valid email address"
                         disabled={status === 'loading'}
                         className="w-full px-4 py-3 bg-white/5 text-zinc-200 border border-white/10 rounded-xl focus:outline-none focus:border-orange-500/50 focus:ring-1 focus:ring-orange-500/50 placeholder:text-gray-600 transition-all disabled:opacity-50"
                         placeholder="john@example.com"
@@ -141,6 +145,8 @@ const Contact = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
+                        pattern="[0-9+\-\s()]{10,}"
+                        title="Please enter a valid phone number (at least 10 digits)"
                         disabled={status === 'loading'}
                         className="w-full px-4 py-3 bg-white/5 text-zinc-200 border border-white/10 rounded-xl focus:outline-none focus:border-orange-500/50 focus:ring-1 focus:ring-orange-500/50 placeholder:text-gray-600 transition-all disabled:opacity-50"
                         placeholder="+91-9876543210"
@@ -177,7 +183,7 @@ const Contact = () => {
                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
                           </svg>
-                          Process…
+                          Sending…
                         </>
                       ) : (
                         <span>✨ Send Message</span>

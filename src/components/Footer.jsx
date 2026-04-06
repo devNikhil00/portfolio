@@ -35,7 +35,7 @@ const Footer = () => {
             Quick Links
           </h3>
           <ul className="space-y-2 text-gray-400">
-            {["home", "about", "projects", "skills", "contact"].map((item) => (
+            {["home", "about", "skills", "projects", "experience", "education", "contact"].map((item) => (
               <li key={item}>
                 <a
                   href={`#${item}`}
@@ -56,26 +56,29 @@ const Footer = () => {
 
           <div className="grid grid-cols-2 gap-x-4 gap-y-3 text-gray-400">
             {[
-              [FaHtml5, "HTML", "text-orange-500"],
-              [FaCss3Alt, "CSS", "text-blue-500"],
-              [FaJs, "JavaScript", "text-yellow-400"],
-              [FaReact, "React", "text-cyan-400"],
-              [FaNodeJs, "Node.js", "text-green-500"],
-              [FaDatabase, "MongoDB", "text-green-400"],
-              [FaGitAlt, "Git", "text-red-500"],
-              [FaNpm, "NPM", "text-red-600"],
-              [SiTailwindcss, "Tailwind", "text-sky-400"],
-              [SiExpress, "Express", "text-gray-300"],
-              [FaBootstrap, "Bootstrap", "text-purple-500"],
-              [TbBrandNextjs, "Next.js", "text-white"],
+              [FaHtml5, "HTML", "text-orange-500", "https://developer.mozilla.org/en-US/docs/Web/HTML"],
+              [FaCss3Alt, "CSS", "text-blue-500", "https://developer.mozilla.org/en-US/docs/Web/CSS"],
+              [FaJs, "JavaScript", "text-yellow-400", "https://developer.mozilla.org/en-US/docs/Web/JavaScript"],
+              [FaReact, "React", "text-cyan-400", "https://react.dev"],
+              [FaNodeJs, "Node.js", "text-green-500", "https://nodejs.org/en/docs"],
+              [FaDatabase, "MongoDB", "text-green-400", "https://www.mongodb.com/docs"],
+              [FaGitAlt, "Git", "text-red-500", "https://git-scm.com/doc"],
+              [FaNpm, "NPM", "text-red-600", "https://docs.npmjs.com"],
+              [SiTailwindcss, "Tailwind", "text-sky-400", "https://tailwindcss.com/docs"],
+              [SiExpress, "Express", "text-gray-300", "https://expressjs.com"],
+              [FaBootstrap, "Bootstrap", "text-purple-500", "https://getbootstrap.com/docs"],
+              [TbBrandNextjs, "Next.js", "text-white", "https://nextjs.org/docs"],
             ].map((item) => {
               const IconComp = item[0];
               const label = item[1];
               const color = item[2];
+              const docUrl = item[3];
               return (
                 <a
                   key={label}
-                  href="#"
+                  href={docUrl}
+                  target="_blank"
+                  rel="noreferrer"
                   className="group flex items-center gap-2 transition-colors duration-300 hover:text-orange-300"
                 >
                   <IconComp

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavHashLink } from 'react-router-hash-link';
 import { useLocation } from "react-router-dom";
-import { FaHome, FaCode, FaCogs, FaUser, FaEnvelope, FaLinkedin, FaGithub, FaInstagram, FaFileDownload } from "react-icons/fa";
+import { FaHome, FaCode, FaCogs, FaGraduationCap, FaUser, FaEnvelope, FaLinkedin, FaGithub, FaInstagram, FaFileDownload, FaBriefcase } from "react-icons/fa";
 import useActiveSection from "../hooks/useActiveSection";
 import "./css/Navbar.css";
 
@@ -19,9 +19,11 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", to: "/#home", id: "home", icon: <FaHome /> },
-    { name: "Projects", to: "/#projects", id: "projects", icon: <FaCode /> },
-    { name: "Skills", to: "/#skills", id: "skills", icon: <FaCogs /> },
     { name: "About", to: "/#about", id: "about", icon: <FaUser /> },
+    { name: "Skills", to: "/#skills", id: "skills", icon: <FaCogs /> },
+    { name: "Projects", to: "/#projects", id: "projects", icon: <FaCode /> },
+    { name: "Experience", to: "/#experience", id: "experience", icon: <FaBriefcase /> },
+    { name: "Education", to: "/#education", id: "education", icon: <FaGraduationCap /> },
     { name: "Contact", to: "/#contact", id: "contact", icon: <FaEnvelope /> },
   ];
 
