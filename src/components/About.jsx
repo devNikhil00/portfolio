@@ -20,15 +20,16 @@ const About = () => {
             <span className="text-orange-400 font-medium">
               Nikhil Prajapati
             </span>
-            , a passionate <strong>Full Stack Developer</strong> and Computer
-            Science graduate who enjoys building clean, scalable, and visually
-            appealing web applications using the <strong>MERN stack</strong>.
+            , a <strong>Full Stack Developer</strong> and B.Tech Computer
+            Science graduate who builds clean, scalable, and production-ready
+            web applications with the <strong>MERN stack</strong>.
             <br />
             <br />
-            I’m currently focused on improving my React, Node.js, and MongoDB
-            skills, creating modern projects, and preparing for full-time
-            opportunities where I can collaborate with experienced teams and
-            contribute to impactful products.
+            I've shipped multiple full-stack projects — from an AI-powered
+            interview platform to a real-time e-commerce system — with a focus
+            on responsive design, RESTful APIs, and modern tooling like
+            Tailwind CSS and Framer Motion. I'm eager to bring this hands-on
+            experience to a team where I can contribute from day one.
           </p>
         </div>
 
@@ -62,7 +63,7 @@ const About = () => {
               <div
                 key={index}
                 className="group rounded-xl overflow-hidden  
-                          bg-shadow-md hover:shadow-[0_0_10px_#1e90ff80] transition-shadow duration-500 border border-[#1e90ff30] hover:border-[#1e90ff]"
+                          shadow-md hover:shadow-[0_0_10px_#1e90ff80] transition-shadow duration-500 border border-[#1e90ff30] hover:border-[#1e90ff]"
               >
                 <div className="overflow-hidden">
                   <img

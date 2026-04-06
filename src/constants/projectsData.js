@@ -121,7 +121,7 @@ export const PROJECTS_DATA = [
       ]
     },
     img: "/projects/notes1.png",
-    link: null,
+    link: "",
     github: "https://github.com/devNikhil00/notes-app",
     status: "completed",
     techStack: ["MongoDB", "Express.js", "React.js", "Node.js", "Tailwind CSS", "JWT Auth"],
@@ -132,6 +132,52 @@ export const PROJECTS_DATA = [
       "Mongoose schema validation",
       "Instant UI updates via React state",
       "Responsive Tailwind CSS design",
+    ]
+  },
+  {
+    id: "ai-lead-prioritization-dashboard",
+    title: "AI Lead Prioritization Dashboard",
+    shortDesc: "A Streamlit dashboard that scores and ranks leads (0-100) using explainable, rule-based logic for faster sales prioritization.",
+    overview: "An end-to-end lead intelligence dashboard built with Python and Streamlit. The system transforms raw CRM CSV exports into ranked, categorized, and explainable lead outcomes in seconds. It combines deterministic weighted scoring with plain-English explanations so sales teams can trust and act on every decision without relying on opaque black-box models.",
+    details: [
+      {
+        title: "Rule-Based Scoring Engine",
+        desc: "Implements weighted scoring across six business signals (intent, engagement, and firmographic attributes). Scores are normalized to a 0-100 scale, then mapped to action-ready categories: Hot, Warm, and Cold."
+      },
+      {
+        title: "Explainability Layer",
+        desc: "Generates a reason_tag and a human-readable insight sentence for every lead. This makes prioritization transparent for sales reps and leadership, improving trust in outreach decisions."
+      },
+      {
+        title: "Robust Data Preprocessing",
+        desc: "Handles messy real-world CSV inputs safely with type coercion, missing-value defaults, unknown category handling, and warning surfacing so the app remains stable instead of crashing on imperfect data."
+      },
+      {
+        title: "Interactive Dashboard Workflow",
+        desc: "Provides upload, ranking, filtering, metrics, sort controls, and downloadable outputs in a polished Streamlit UI, enabling a complete analyst-to-sales workflow from one screen."
+      },
+    ],
+    architecture: {
+      description: "The dashboard follows a clean pipeline architecture: ingest raw leads, preprocess for quality, score and categorize, then attach explanations for decision-ready output.",
+      layers: [
+        { name: "Streamlit UI", desc: "Interactive interface for CSV upload, filters, sorting, KPI tiles, ranked tables, and export actions. Delivers a recruiter-friendly product experience with minimal setup.", color: "blue" },
+        { name: "Scoring Orchestrator", desc: "Coordinates preprocess -> score -> categorize -> explain flow through modular service functions to keep logic maintainable and testable.", color: "orange" },
+        { name: "Explainability Service", desc: "Creates plain-English insight summaries and reason tags such as High Intent, Pricing Interest, or Engaged for each lead result.", color: "cyan" },
+        { name: "Preprocessing + Config", desc: "Validates and sanitizes input data while centralizing weights and thresholds in config files for easy business-rule tuning.", color: "green" },
+      ]
+    },
+    img: "/projects/AI-Lead-01.png",
+    link: "https://ai-lead-prioritization-dashboard-a.streamlit.app/",
+    github: "https://github.com/devNikhil00/AI-lead-Prioritization-Dashboard",
+    status: "completed",
+    techStack: ["Python", "Streamlit", "Pandas", "Rule-based AI", "Data Validation", "CSV Processing"],
+    features: [
+      "Weighted lead scoring across 6 business signals",
+      "Hot / Warm / Cold auto-categorization",
+      "Per-lead explainable insights + reason tags",
+      "Interactive filtering, sorting, and score range controls",
+      "CSV upload and downloadable ranked output",
+      "Resilient preprocessing for messy CRM datasets",
     ]
   },
   {
